@@ -25,7 +25,7 @@ export default {
     new HtmlWebpackPlugin({
       template: "src/index.html",
       // Properties defined here will be availabe in our index.html file using htmlWebpackPlugin.options.varName
-      trackJSToken: "---",
+      trackJSToken: "---", // Using this and EJS we can set up track js script files in our index.html conditionally just for PROD- not coded
     })
   ],
   module: {
