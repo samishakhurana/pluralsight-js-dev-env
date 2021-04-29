@@ -1,6 +1,7 @@
 // For dev webpack configuration
 
 import path from "path";
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
   mode: "development", // because of dev mode it provides useful names to modules which helps us to debug
@@ -11,7 +12,11 @@ export default {
     publicPath: "/",
     filename: "bundle.js",
   },
-  plugins: [],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "src/index.html"
+    })
+  ],
   module: {
     rules: [ // we tell webpack how to handle diff file types
       { test: /\.js$/, exclude: /node_modules/, use: ["babel-loader"] }, // Bundle our js using babel and ignore node modules
